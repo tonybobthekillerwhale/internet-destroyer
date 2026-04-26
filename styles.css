@@ -1,0 +1,65 @@
+.target-cursor,
+.target-cursor *,
+.target-cursor a {
+    cursor: none !important;
+}
+
+.highlighted {
+    position: relative;
+    cursor: url("crosshair2.png") 16 16, crosshair !important; 
+    xoutline: 2px solid red;
+    z-index: 10000;
+    xfilter: brightness(2);
+}
+
+.highlight-bg-enabled .highlighted {
+  background-color: rgba(255, 64, 64, 0.18) !important;
+}
+
+#cursor-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 2147483647;
+  mix-blend-mode: difference;
+  background-color: #ffffff;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: 0 0;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: 0 0;
+  opacity: 0;
+  transform: translate(0, 0);
+}
+
+.highlight-cursor-enabled #cursor-overlay.active {
+  opacity: 1;
+}
+
+#highlight-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 2147483647;
+  box-shadow: 0 0 0 2px rgba(255,80,80,.8), 0 0 18px 6px rgba(255,0,0,.4);
+  opacity: 0;
+  transform: translate(0, 0);
+}
+
+.highlight-border-enabled #highlight-overlay.active {
+  opacity: 1;
+  animation: scan 1.4s ease-in-out infinite;
+}
+@keyframes scan {
+  0%   { opacity: .6; }
+  50%  { opacity: 1; }
+  100% { opacity: .6; }
+}

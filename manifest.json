@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Internet Destroyer",
+  "version": "1.0",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["<all_urls>"], 
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["explosion2.gif", "sounds/explosion.mp3", "crosshair2.png"], "matches": ["<all_urls>"] }
+  ],
+  "commands": {
+    "toggle-highlight": {
+      "suggested_key": { "default": "Ctrl+Delete" },
+      "description": "Toggle target sight highlighter"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Internet Destroyer Settings",
+    "default_icon": "assets/icon.png"
+  }
+}

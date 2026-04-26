@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { font: 13px system-ui, sans-serif; margin: 10px; min-width: 220px; }
+      button { width: 100%; margin: 6px 0; padding: 8px; }
+      .danger { background:#fff0f0; border:1px solid #e66; }
+      .section { margin: 6px 0 10px; }
+      label { display: flex; gap: 8px; align-items: center; margin: 4px 0; }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <label><input type="checkbox" id="prefBorder"> Highlight border/glow</label>
+      <label><input type="checkbox" id="prefBg"> Highlight background</label>
+    </div>
+    <button id="undo">Undo Last Destruction</button>
+    <button id="clearPage">Clear Destructions (this page)</button>
+    <button id="clearAll" class="danger">Clear ALL Destructions (everywhere)</button>
+    <script src="popup.js"></script>
+  </body>
+</html>
