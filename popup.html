@@ -3,17 +3,34 @@
   <head>
     <meta charset="utf-8" />
     <style>
-      body { font: 13px system-ui, sans-serif; margin: 10px; min-width: 220px; }
+      body { font: 13px system-ui, sans-serif; margin: 10px; min-width: 240px; }
       button { width: 100%; margin: 6px 0; padding: 8px; }
       .danger { background:#fff0f0; border:1px solid #e66; }
       .section { margin: 6px 0 10px; }
       label { display: flex; gap: 8px; align-items: center; margin: 4px 0; }
+      .section-title { font-weight: 600; margin: 8px 0 4px; }
+      .range-row { display: grid; grid-template-columns: 44px 1fr 42px; gap: 8px; align-items: center; margin: 6px 0; }
+      input[type="range"] { width: 100%; }
+      .swatch {
+        width: 100%;
+        height: 22px;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        margin: 4px 0 6px;
+      }
     </style>
   </head>
   <body>
     <div class="section">
+      <div class="section-title">Highlight</div>
       <label><input type="checkbox" id="prefBorder"> Highlight border/glow</label>
       <label><input type="checkbox" id="prefBg"> Highlight background</label>
+    </div>
+    <div class="section">
+      <div class="section-title">Explosion Color</div>
+      <div id="explosionSwatch" class="swatch"></div>
+      <label class="range-row">Hue <input type="range" id="explosionHue" min="0" max="359" step="1"><span id="hueValue"></span></label>
+      <label><input type="checkbox" id="randomHue"> Random hue each explosion</label>
     </div>
     <button id="undo">Undo Last Destruction</button>
     <button id="clearPage">Clear Destructions (this page)</button>

@@ -2,7 +2,7 @@
 
 # Internet Destroyer Chrome Extension
 
-Fuck the internet.
+Blow up the internet. 💥
 
 ## Install
 
